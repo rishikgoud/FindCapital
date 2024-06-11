@@ -156,27 +156,36 @@ img {
 }
 
 .navbar_logo {
-    padding: 1rem;
+    padding: .5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--body-color);
 }
-
+.nav_bar_main_logo{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.nav_bar_main_head{
+    display: none;
+}
 .nav_search{
     border: 1px solid black;
     padding-block: 0.3rem;
     padding-inline: 1rem;
     display: flex;
     border-radius: .3rem;
+    width: auto;
 }
 .nav_bar_heading {
     display: flex;
     gap: 15px;
     color: var(--first-color);
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
     font-size: var(--body-font);
-    margin-inline: 1rem;
+    /* margin-inline: 1rem; */
 }
 
 
@@ -226,13 +235,27 @@ img {
 
 /* =============================responsive =================== */
 @media (width > 768px) {
+    
+    .nav_bar_main_logo{
+        display: none;
+    }
+    .nav_bar_main_head{
+        display: block;
+    }
+    .sign_up_btn{
+        padding: 1rem;
+        background-color: var(--first-color);
+        border-radius: .3rem;
+    }
+}
+
+@media (width > 1180px) {
     .nav {
         max-width: var(--max-width);
         width: 100%;
         position: fixed;
         background-color: var(--body-color);
     }
-
     .navbar {
         max-width: 1200px;
         margin: auto;
@@ -241,20 +264,19 @@ img {
         align-items: center;
         justify-content: space-between;
 
-    }
-
+    }   
     .navbar_logo {
         padding: 0;
         background-color: transparent;
         display: flex;
         align-items: center;
+        gap: 1rem;
         justify-content: space-evenly;
     }
-
-    .nav_menu_btn {
-        display: none;
+    .nav_bar_main_head{
+        display: block;
+        padding-inline:1rem;
     }
-
     .nav_links {
         width: fit-content;
         padding: 0;
@@ -264,10 +286,7 @@ img {
         background-color: transparent;
         padding-right: 1rem;
     }
-    .sign_up_btn{
-        padding: 1rem;
-        background-color: var(--first-color);
-        border-radius: .3rem;
+    .nav_menu_btn {
+        display: none;
     }
 }
-
