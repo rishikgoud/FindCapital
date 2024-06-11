@@ -1,0 +1,273 @@
+/* ===================Google Fonts================= */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ======================variables of CSS============ */
+:root {
+    --header-height: 3.5rem;
+
+    /* ===========colors=========== */
+    /* color mode HSL(Hue, Saturation, Lightness) */
+    --first-color: hsl(359°, 100%, 0%); 
+    --first-color-dark: hsl(78°, 0%, 19%);
+    --first-color-light: hsl(268, 100%, 83%);
+    --title-color: hsl(247, 27%, 31%);
+    --text-color: hsl(0, 0%, 41%);
+    --body-color: hsl(0, 0%, 100%);
+    --container-color: hsl(266, 78%, 98%);
+    --border-color: hsl(0, 0%, 87%);
+    --white: #fff;
+
+    /* ===========font and typography============ */
+    --body-font: 'Jost', sans-serif;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2.25rem;
+    --h3-font-size: 1.5rem;
+    --larger-font-size: 1.2rem;
+    --large-font-size: 1.125rem;
+
+    /* ==============font weight=================== */
+    --weight-300: 300;
+    --weight-400: 400;
+    --weight-600: 600;
+}
+
+/* =================================Dark Theme========================== */
+#day-night:checked~* {
+    --title-color: hsl(247, 27%, 31%);
+    --text-color: hsl(0, 0%, 41%);
+    --body-color: hsl(0, 0%, 100%);
+    --container-color: hsl(266, 78%, 98%);
+    --border-color: hsl(0, 0%, 87%);
+}
+
+/* ==================Base CSS================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+input,
+textarea,
+button, body {
+    font-family: var(--body-font);
+    font-size: var(--larger-font-size);
+}
+
+main {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+input,
+textarea,
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--weight-600);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.section {
+    padding-block: 6rem;
+}
+
+.section_title {
+    font-size: var(--h1-font-size);
+    font-weight: var(--weight-600);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid var(--first-color);
+    background-color: var(--first-color);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-size: var(--large-font-size);
+    transition: all .5s ease;
+}
+
+.btn:hover {
+    background-color: var(--first-color-dark);
+}
+
+.btn_transparant {
+    background-color: transparent;
+    color: var(--first-color);
+}
+
+.btn_transparant:hover {
+    background-color: var(--first-color);
+    color: var(--white);
+}
+
+
+/* ==================header section======================= */
+.nav {
+    width: 100%;
+    position: fixed;
+    isolation: isolate;
+    background-color: var(--body-color);
+    z-index: 100;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+.navbar {
+    max-width: 1200px;
+    position: relative;
+    isolation: isolate;
+}
+
+.navbar_logo {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--body-color);
+}
+
+.nav_search{
+    border: 1px solid black;
+    padding-block: 0.3rem;
+    padding-inline: 1rem;
+    display: flex;
+    border-radius: .3rem;
+}
+.nav_bar_heading {
+    display: flex;
+    gap: 15px;
+    color: var(--first-color);
+    padding-left: 1rem;
+    font-size: var(--body-font);
+    margin-inline: 1rem;
+}
+
+
+.nav_menu_btn i {
+    color: var(--first-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav_bar_heading h3 {
+    font-size: 2rem;
+    color: var(--first-color);
+    font-weight: 600;
+    padding: 1.75 1rem;
+}
+
+
+.nav_links {
+    list-style: none;
+    position: absolute;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--body-color);
+    transform: translateY(-100%);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.nav_links.open {
+    transform: translateY(0);
+}
+
+.nav__links {
+    color: var(--title-color);
+    transition: all .3s ease;
+}
+
+.active__link,
+.nav__links:hover {
+    color: var(--first-color);
+
+}
+
+/* =============================responsive =================== */
+@media (width > 768px) {
+    .nav {
+        max-width: var(--max-width);
+        width: 100%;
+        position: fixed;
+        background-color: var(--body-color);
+    }
+
+    .navbar {
+        max-width: 1200px;
+        margin: auto;
+        padding-block: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .navbar_logo {
+        padding: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .nav_menu_btn {
+        display: none;
+    }
+
+    .nav_links {
+        width: fit-content;
+        padding: 0;
+        position: static;
+        flex-direction: row;
+        transform: none;
+        background-color: transparent;
+        padding-right: 1rem;
+    }
+    .sign_up_btn{
+        padding: 1rem;
+        background-color: var(--first-color);
+        border-radius: .3rem;
+    }
+}
+
